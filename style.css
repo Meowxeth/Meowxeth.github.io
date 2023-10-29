@@ -10,8 +10,12 @@
     margin-left: 2.5rem;
     padding: 10px;
 }
-#bio{
+#short-intro{
     margin-top: 4rem;
     margin-left: 3.5rem;
     width: 25rem;
+}
+#bio{
+    margin-left: 3.5rem;
+    margin-top: 5rem;
 }
