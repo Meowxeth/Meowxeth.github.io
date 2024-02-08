@@ -62,8 +62,7 @@
         align-self: center;
         justify-self: center;
         height: auto;
-        width: 25rem;
-        justify-self: center;
+        width: 20dvw;
         border-radius: 1rem;
         transition: border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
         cursor: pointer;
@@ -72,6 +71,24 @@
         cursor: pointer;
         border-radius: 0.5rem;
         transform: scale(1.1);
+      }
+      @media only screen and (max-width: 600px) {
+        #image {
+          width: 70dvw;
+        }
+        #hi {
+          text-align: center;
+          justify-self: center;
+          font-size: 2rem;
+        }
+        #yes1 {
+          justify-self: end;
+          margin-right: 1rem;
+        }
+        #yes2 {
+          justify-self: start;
+          margin-left: 1rem;
+        }
       }
     </style>
   </head>
