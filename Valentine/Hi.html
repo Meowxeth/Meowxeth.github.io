@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hi, Gaela</title>
+    <style>
+      #hi {
+        grid-column: 1;
+        font-family: "Merriweather", serif;
+        color: aliceblue;
+        text-align: left;
+        align-self: end;
+        justify-self: center;
+        height: max-content;
+        grid-row: 1;
+      }
+      #button-wrapper {
+        grid-column: 1;
+        grid-row: 2;
+        height: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+      }
+      button {
+        align-self: center;
+        width: 5rem;
+        height: 2.5rem;
+        text-decoration: none;
+        border-radius: 0.4rem;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(240, 137, 238);
+      }
+      #yes1 {
+        justify-self: end;
+        margin-right: 3rem;
+      }
+      #yes2 {
+        justify-self: start;
+        margin-left: 3rem;
+      }
+      #image-wrapper {
+        justify-self: center;
+        align-self: center;
+        width: fit-content;
+        height: fit-content;
+        grid-column: 1;
+        grid-row: 2 / 4;
+        display: grid;
+      }
+      #image {
+        align-self: center;
+        justify-self: center;
+        height: auto;
+        width: 25rem;
+        justify-self: center;
+        border-radius: 1rem;
+        transition: border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
+        cursor: pointer;
+      }
+      #image:hover {
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body style="padding: 0; margin: 0%; background-color: rgb(42, 41, 55)">
+    <div
+      style="
+        width: 100dvw;
+        height: 100lvh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      "
+      class="wrapper"
+    >
+      <h1 id="hi">
+        Hi, Gaela<br />
+        Will you be my Valentine?
+      </h1>
+      <div id="button-wrapper">
+        <button onclick="playSound()" id="yes1">Yes</button>
+        <button onclick="playSound()" id="yes2">YES</button>
+      </div>
+      <div id="image-wrapper">
+        <img
+          id="image"
+          onclick="playSound2()"
+          class="hover-effect"
+          src="https://i.pinimg.com/736x/65/de/07/65de07f92555fbcf5dbfad838fa2a5f6.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script>
+    const defaults = {
+      spread: 360,
+      ticks: 100,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      shapes: ["heart"],
+      colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+    };
+
+    function playSound() {
+      let audio = new Audio("sfx.mp3");
+      console.log("YIPEEE");
+      audio.play();
+
+      changeBackgroundColorTemporarily();
+
+      confetti({
+        ...defaults,
+        particleCount: 50,
+        scalar: 2,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 25,
+        scalar: 3,
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 4,
+      });
+
+      document.getElementById("hi").textContent = "Hihi, I love you Gaela.";
+    }
+    function playSound2() {
+      let audio = new Audio("sfx2.mp3");
+      console.log("waooh");
+      audio.play();
+    }
+
+    // Function to change the background color temporarily
+    function changeBackgroundColorTemporarily() {
+      // Save the current background color so we can restore it later
+      const originalColor = document.body.style.backgroundColor;
+
+      // Change the background color to red
+      document.body.style.backgroundColor = "#E55451";
+
+      // Use setTimeout to revert the background color after  5 seconds (5000 milliseconds)
+      setTimeout(() => {
+        document.body.style.backgroundColor = originalColor;
+      }, 5000);
+    }
+
+    // Call the function to change the background color
+  </script>
+</html>
