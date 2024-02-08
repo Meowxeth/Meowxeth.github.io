@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--icons-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <!--- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,49 +21,33 @@
   </head>
 
   <body>
-    <div id="hello-page">
-      <h3 style="font-weight: 300; text-align: left; font-size: 4rem">
-        Hi, I'm
-      </h3>
-      <br />
-      <br />
-      <br />
-      <h1 style="font-weight: 300; text-align: center; font-size: 10rem">
-        Ipei Goto
-      </h1>
-    </div>
-
-    <div id="short-intro">
-      <p style="font-weight: 300; text-align: left; font-size: 3rem"">I’m an IT student from the Philippines.</p>
-    </div>
-
-    <div id="project-showcase">
-      <h2 style="font-weight: 500; font-size: 5rem; text-align: center; margin-top: 7rem;">---Projects---</h2>
-
-      <div id="python-div">
-        <img src="https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg" alt="" srcset="">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Pathfinding_2D_Illustration.svg/1200px-Pathfinding_2D_Illustration.svg.png  " alt="" srcset="">
-        <div id="interactive-map"></div>
+    <div class="wrapper">
+      <div id="icon">
+        <span onclick="verify()" class="material-symbols-outlined">
+          favorite
+        </span>
       </div>
-
     </div>
+    <script>
+      String.prototype.hashCode = function () {
+        var hash = 0,
+          i,
+          chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+          chr = this.charCodeAt(i);
+          hash = (hash << 5) - hash + chr;
+          hash |= 0;
+        }
+        return hash;
+      };
 
-    <div id="bio">
-      <h2 style="font-weight:500; font-size: 3rem;">About me</h2>
-      <p  style="
-      font-weight:300; font-size: 2rem; line-height: 140%; width: 40rem; margin-top: 0.4rem; margin-left: 3rem;
-      ">
-        I’m a Half-Japanese, Half-Filipino <br> BSIT student based in Pasig City.<br> 20 years old, and can speak, English, Japanese, and Filipino.
-      </p>
-      <h4 style="font-weight: 500; font-size: 3rem; margin-top: 3rem;">Skillset:</h4>
-      <ul style="margin-left: 4.5rem;font-size: 1.5rem;font-weight: 300;line-height: 150.4%; /* 37.6px */">
-        <li>Python</li>
-        <li>HTML, CSS</li>
-        <li>JavaScript</li>
-      </ul>
-      <h2 style="font-weight:500; font-size: 3rem; margin-top:2rem;">Mail</h2>
-      <p style="font-weight: 300; font-size: 2rem; margin-left: 3.5rem; margin-top: 0.5rem; padding-bottom: 3rem;">ipeigotou@g  mail.com</p>
-    </div>
-
+      function verify() {
+        let input = prompt("Month?", "");
+        if (3273794 == input.toLowerCase().hashCode()) {
+          window.location.href = "/Valentine/Hi.html";
+        }
+      }
+    </script>
   </body>
 </html>
